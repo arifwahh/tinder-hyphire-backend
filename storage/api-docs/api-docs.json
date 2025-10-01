@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tinder Lite API",
+        "description": "API documentation for Tinder-like app",
+        "contact": {
+            "email": "support@example.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Local API Server"
+        }
+    ],
+    "paths": {
+        "/api/people": {
+            "get": {
+                "tags": [
+                    "People"
+                ],
+                "summary": "Get list of recommended people",
+                "operationId": "55f6f7c0a6d6a11cd56da8c7e7513f41",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/people/{id}/like": {
+            "post": {
+                "tags": [
+                    "People"
+                ],
+                "summary": "Like a person",
+                "operationId": "bc2adad842af56d5dadcd5a1059059d5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Person liked"
+                    }
+                }
+            }
+        },
+        "/api/people/{id}/dislike": {
+            "post": {
+                "tags": [
+                    "People"
+                ],
+                "summary": "Dislike a person",
+                "operationId": "b3ae70f93fd19cc481a7f9b898bb0d1e",
+                "responses": {
+                    "200": {
+                        "description": "Person disliked"
+                    }
+                }
+            }
+        },
+        "/api/people/liked/list": {
+            "get": {
+                "tags": [
+                    "People"
+                ],
+                "summary": "Get list of liked people",
+                "operationId": "d8b2c41cc1ce89180f01e233e37930f2",
+                "responses": {
+                    "200": {
+                        "description": "List of liked people"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "People",
+            "description": "People"
+        }
+    ]
+}
